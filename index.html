@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/style.css">
+  <title>JS+Tailwind</title>
+</head>
+
+<body class="min-h-screen bg-orange-100">
+  <div class="container-main">
+    <h1 class="title-h1">Примеры использование Tailwind и JS</h1>
+    <h2 class="title-h2">1. Открыть/Скрыть блок кнопкой</h2>
+    <div class="container-content"><button class="btn-open" id="button-1">Открыть блок</button>
+      <div class="content-block hidden" id="block-1">
+        <p class="content-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta voluptatibus, culpa et rerum recusandae quisquam eaque, officiis inventore nobis illo dolore. Voluptas laudantium excepturi molestiae, laborum maxime ullam explicabo aliquid.</p>
+      </div>
+    </div>
+    <h2 class="title-h2">2. Аккордеон</h2>
+    <div class="container-content">
+      <dl>
+        <dt class="accord-title"><span>Блок 1. Заголовок</span><span class="hover:rotate-45 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-cyan-600 w-6 h-6 hover:fill-orange-100 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </span></dt>
+        <dd class="accord-content hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla harum quisquam adipisci delectus odit sint facilis incidunt totam ipsa explicabo quae doloribus ullam deleniti accusantium unde mollitia corrupti, minus quidem.</dd>
+        <dt class="accord-title"><span>Блок 2. Заголовок</span><span class="hover:rotate-45 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-cyan-600 w-6 h-6 hover:fill-orange-100 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </span></dt>
+        <dd class="accord-content hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla harum quisquam adipisci delectus odit sint facilis incidunt totam ipsa explicabo quae doloribus ullam deleniti accusantium unde mollitia corrupti, minus quidem.</dd>
+        <dt class="accord-title"><span>Блок 3. Заголовок</span><span class="hover:rotate-45 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-cyan-600 w-6 h-6 hover:fill-orange-100 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </span></dt>
+        <dd class="accord-content hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla harum quisquam adipisci delectus odit sint facilis incidunt totam ipsa explicabo quae doloribus ullam deleniti accusantium unde mollitia corrupti, minus quidem.</dd>
+      </dl>
+    </div>
+    <h2 class="title-h2">3. Табы</h2>
+    <div class="container-content">
+      <ul class="flex flex-wrap justify-center ">
+        <li class="tab-title" data-tab="tab-1">Таб-1-описание</li>
+        <li class="tab-title" data-tab="tab-2">Таб-2-описание</li>
+        <li class="tab-title" data-tab="tab-3">Таб-3-описание</li>
+      </ul>
+      <div class="tab-block" data-tab-cont id="tab-1">
+        <h3 class="tab-block__title">Таб-1</h3>
+        <p class="text-cyan-800 pt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut asperiores aliquam repellendus, cupiditate repudiandae at incidunt quo eum, alias ad voluptatum doloremque molestiae temporibus accusamus nostrum dolorum ducimus veniam expedita.</p>
+        <blockquote class="text-cyan-600">
+          <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
+        </blockquote>
+      </div>
+      <div class="tab-block hidden" data-tab-cont id="tab-2">
+        <h3 class="tab-block__title">Таб-2</h3>
+        <p class="text-cyan-800 pt-1">Lorem другое 2 sit amet consectetur, adipisicing elit. Ut asperiores aliquam repellendus, cupiditate repudiandae at incidunt quo eum, alias ad voluptatum doloremque molestiae temporibus accusamus nostrum dolorum ducimus veniam expedita.</p>
+      </div>
+      <div class="tab-block hidden" data-tab-cont id="tab-3">
+        <h3 class="tab-block__title">Таб-3</h3>
+        <p class="text-cyan-800 pt-1">Lorem другое 3 amet consectetur, adipisicing elit. Ut asperiores aliquam repellendus, cupiditate repudiandae at incidunt quo eum, alias ad voluptatum doloremque molestiae temporibus accusamus nostrum dolorum ducimus veniam expedita.</p>
+      </div>
+    </div>
+    <h2 class="title-h2">4. Модальные окна</h2>
+    <div class="container-content gap-1 md:flex-row md:justify-between">
+      <button data-modal-button="modal-1" class="btn-open m-auto" id="button-2" type="button">Открыть окно 1</button>
+      <button data-modal-button="modal-2" class="btn-open m-auto" id="button-3" type="button">Открыть окно 2</button>
+    </div>
+  </div>
+  <div id="modal-1" data-modal class="modal-fon hidden">
+    <div class="modal-cart">
+      <div class="modal-cart__fon">
+        <div class="ml-auto p-1"><span data-modal-closed><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-8 h-8  stroke-orange-100 hover:stroke-cyan-900 hover:rotate-45 duration-300">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+            </svg>
+          </span></div>
+        <div class="text-center text-orange-100 pb-2 text-xl">Модальное окно 1</div>
+        <form action="telegram.php" method="POST" id="contact-question" name="form-mdchel-1">
+          <input type="hidden" name="project_name" value="Dom-mydomchel">
+          <input type="hidden" name="form_subject" value="Подробнее">
+          <div class="text-orange-100 py-1"><label for="name-mod-1">Имя</label></div>
+          <div>
+            <input class="block w-full" type="text" placeholder="Ваше имя" name="name" id="name-mod-1">
+          </div>
+          <div class="text-orange-100 py-1"><label for="phone-mod-2">Ваш телефон</label></div>
+          <div><input class="block w-full mask-tel" type="tel" placeholder="Введите номер телефона" name="phone" id="phone-mod-1"></div>
+          <div class="flex justify-center mt-4"><button class="w-60 bg-cyan-900 rounded-md text-orange-100 py-2 px-3" type="submit">Отправить</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="modal-2" data-modal class="modal-fon hidden">
+    <div class="modal-cart">
+      <div class="modal-cart__fon">
+        <div class="ml-auto p-1"><span data-modal-closed><svg mlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-8 h-8  stroke-orange-100 hover:stroke-cyan-900 hover:rotate-45 duration-300">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+            </svg></span></div>
+        <div class="text-center text-orange-100 pb-2 text-xl">Модальное окно 2</div>
+        <div>
+          <p class="text-orange-100 pb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa praesentium natus dignissimos commodi. Sit tempore, recusandae adipisci quasi delectus porro consectetur quisquam dignissimos culpa accusamus eos, amet neque voluptate dolores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="src/script.js"></script>
+</body>
+
+</html>

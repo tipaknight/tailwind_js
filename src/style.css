@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  .container-main {
+    @apply container max-w-[1000px] mx-auto px-10 py-10;
+  }
+
+  .title-h1 {
+    @apply text-2xl font-medium text-cyan-600 text-center font-['Oswald'];
+  }
+
+  .title-h2 {
+    @apply ml-10 text-lg text-cyan-800 py-5 font-['Oswald'] ;
+  }
+
+  .container-content {
+    @apply container max-w-[800px] mx-auto flex flex-col;
+  }
+
+  .btn-open {
+    @apply w-60 bg-cyan-600 rounded-md px-3 py-2 text-center text-teal-50 hover:scale-105 hover:bg-cyan-900 transition ease-in-out delay-150;
+  }
+
+  .content-block {
+    @apply flex justify-center mt-3;
+  }
+
+  .content-text {
+    @apply max-w-[800px] prose bg-orange-200 p-5 rounded-md border border-cyan-600;
+  }
+
+  .accord-title {
+    @apply border rounded-md px-5 py-2 border-cyan-600 text-cyan-800 font-medium hover:bg-cyan-600 hover:text-orange-100 transition duration-300 flex justify-between;
+  }
+
+  .accord-content {
+    @apply border rounded-md px-5 py-2 border-cyan-600 my-1 bg-orange-200;
+  }
+
+  .tab-title {
+    @apply border rounded-md px-5 py-2 bg-cyan-600 text-orange-100 m-1 hover:bg-orange-100 hover:text-cyan-600 hover:border-cyan-600;
+  }
+
+  .tab-block {
+    @apply max-w-[700px] prose self-center border border-cyan-600 rounded-md px-5 py-3 bg-orange-200;
+  }
+
+  .tab-block__title {
+    @apply text-center text-cyan-800 border-b border-cyan-800 pb-1;
+  }
+
+  .modal-fon {
+    @apply fixed inset-0 bg-slate-600 opacity-90 p-0 m-0;
+  }
+
+  .modal-cart {
+    @apply absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .modal-cart__fon {
+    @apply relative min-w-[300px] flex flex-col bg-cyan-600 border rounded-md p-3;
+  }
+}
